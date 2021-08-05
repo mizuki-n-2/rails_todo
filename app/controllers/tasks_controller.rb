@@ -10,12 +10,6 @@ class TasksController < ApplicationController
     redirect_to action: 'index'
   end
 
-  def update
-    title = params[:title]
-    task = Task.find(params[:id])
-    task.update(title: title)
-  end
-
   def destroy
     task = Task.find(params[:id])
     task.destroy
