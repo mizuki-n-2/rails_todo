@@ -4,19 +4,10 @@ class TasksController < ApplicationController
     render "tasks/index"
   end
 
-  def new
-    render "tasks/new"
-  end
-
   def create
     title = params[:title]
     @task = Task.create(title: title)
     redirect_to("/", status: :created)
-  end
-
-  def edit
-    @task = Task.find(params[:id])
-    render "tasks/edit"
   end
 
   def update
