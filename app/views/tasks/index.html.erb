@@ -1,1 +1,14 @@
-<h1><%=  %></h1>
+<div>
+  <h1>TODOリスト</h1>
+  
+  <form action="/tasks" method="post">
+    <input type="text" name="title">
+    <button type="submit">追加</button>
+  </form>
+  
+  <ul>
+    <% @tasks.each do |task| %>
+    <li><%= task.title %></li>
+    <% end %>
+  </ul>
+</div>
