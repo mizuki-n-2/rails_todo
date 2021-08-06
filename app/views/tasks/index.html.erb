@@ -1,17 +1,17 @@
-<div>
+<div class="main">
   <h1>TODOリスト</h1>
   
   <form action="/tasks" method="post">
     <input type="text" name="title" required>
-    <button type="submit">追加</button>
+    <button type="submit" class="add-btn">追加</button>
   </form>
   
-  <ul>
+  <ol>
     <% @tasks.each do |task| %>
     <li>
       <%= task.title %>
-      <%= link_to("✖︎", "/tasks/#{task.id}", method: :delete) %>
+      <span><%= link_to("✖︎", "/tasks/#{task.id}", method: :delete) %></span>
     </li>
     <% end %>
-  </ul>
+  </ol>
 </div>
