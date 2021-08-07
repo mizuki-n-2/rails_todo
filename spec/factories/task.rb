@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :task do
-    title { "やること" }
+    title { Faker::Lorem.word }
   end
 end
